@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://gruda.hr/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="/fonts/barlow-condensed-800-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/app.css?v=c1793b54">
+<link rel="stylesheet" href="/css/app.css?v=c3dbc800">
 <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('anim');setTimeout(function(){if(!window.gsap)document.documentElement.classList.remove('anim')},4000)}</script>
 <script src="/js/gsap.min.js" defer></script>
 <script src="/js/ScrollTrigger.min.js" defer></script>
@@ -109,7 +109,7 @@ mm.add('(min-width: 1024px)',function(){var tr=document.querySelector('[data-vod
 var pomak=function(){return -(tr.scrollWidth-innerWidth)};
 var tw=gsap.to(tr,{x:pomak,ease:'none',scrollTrigger:{trigger:'[data-usluge]',pin:true,scrub:.6,start:'top top',end:function(){return '+='+(tr.scrollWidth-innerWidth)},invalidateOnRefresh:true}});
 gsap.utils.toArray('[data-ploca-foto]').forEach(function(f){gsap.fromTo(f,{scale:1.25},{scale:1,ease:'none',scrollTrigger:{trigger:f,containerAnimation:tw,start:'left right',end:'right left',scrub:true}})});
-gsap.utils.toArray('[data-ploca-tekst]').forEach(function(t){gsap.from(t.children,{y:50,opacity:0,stagger:.08,ease:E,scrollTrigger:{trigger:t,containerAnimation:tw,start:'left 75%'}})})});
+gsap.utils.toArray('[data-ploca-tekst]').slice(1).forEach(function(t){gsap.from(t.children,{y:40,opacity:0,duration:.7,stagger:.06,ease:E,scrollTrigger:{trigger:t,containerAnimation:tw,start:'left 92%'}})})});
 mm.add('(max-width: 1023px)',function(){gsap.utils.toArray('[data-ploca-foto]').forEach(function(f){gsap.fromTo(f,{scale:1.2},{scale:1,ease:'none',scrollTrigger:{trigger:f,start:'top bottom',end:'bottom top',scrub:true}})})});
 /* ruta dostave: cesta se crta, kamion vozi, stajališta se pale */
 var put=document.getElementById('put'),kam=document.getElementById('kamion');
